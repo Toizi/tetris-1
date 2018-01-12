@@ -1,5 +1,5 @@
 /* Micro Tetris, based on an obfuscated tetris, 1989 IOCCC Best Game
- *
+ * 
  * Copyright (c) 1989  John Tromp <john.tromp@gmail.com>
  * Copyright (c) 2009, 2010, 2017  Joachim Nilsson <troglobit@gmail.com>
  *
@@ -306,9 +306,14 @@ int main(int argc, char *argv[])
 	for (i = B_SIZE; i; i--)
 		*ptr++ = i < 25 || i % B_COLS < 2 ? 7 : 0;
 
-	srand((unsigned int)time(NULL));
-	if (tty_init() == -1)
-		return 1;
+	//srand((unsigned int)time(NULL));
+	tty_init();
+	//if (tty_init() == -1)
+	//	printf("Issue in setting up the tty\n");
+	//else 
+	//	printf("No problem\n");
+
+	//	return 1;
 
 	/* Set up signals */
 	sig_init();
